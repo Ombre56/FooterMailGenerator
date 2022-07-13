@@ -1,0 +1,83 @@
+@import './variables.scss';
+
+.title{
+  color: $primary-color;
+  text-align: center;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 4.6875rem;
+  text-shadow: 12px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 2.5rem 0;
+}
+
+.generator-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.form-input{
+  width: 38.9375rem;
+}
+
+.form-cotainer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+input{
+  all: unset;
+  width: 296px;
+  height: 47px;
+  background: rgba(255, 255, 255, 0.44);
+  border-radius: 5px;
+  margin: 10px 10px 10px 0;
+  padding-left: 5px;
+}
+
+input::placeholder{
+  padding-left: 5px;
+}
+
+input:focus{
+  outline: none;
+  border: 2px solid red;
+}
+
+button{
+  all: unset;
+  text-align: center;
+  color: $primary-color;
+}
+
+button:focus{
+  outline: none; 
+}
+
+.form-input-title{
+  color: $primary-color;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  padding-bottom: .5rem;
+}
+
+.form-reset{
+  margin-top: 4rem;
+  margin-left: 11rem;
+  width: 7.5rem;
+  height: 2.8125rem;
+  background: #FA0000;
+  border-radius: 5px;
+  color: $primary-color;
+}
+
+.form-submit{
+  margin-top: 4rem;
+  margin-left: 1.9375rem;
+  width: 7.5rem;
+  height: 2.8125rem;
+  background: #00E109;
+  border-radius: 5px;
+  color: $primary-color;
+}
