@@ -18,14 +18,9 @@ function Form() {
     setEmail('');
   };
 
-  const sendDate = () => {
-    setName(name);
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
     handleReset();
-    console.log(name, surname, department, position, telephone, email)
   };
 
   return (
@@ -39,6 +34,7 @@ function Form() {
                 <input
                   type="text"
                   name="name"
+                  maxLength={10}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   id="form-name"
@@ -52,6 +48,7 @@ function Form() {
                 <input
                   type="text"
                   name="surname"
+                  maxLength={10}
                   value={surname}
                   onChange={(e) => setSurname(e.target.value)}
                   id="form-surname"
@@ -115,12 +112,12 @@ function Form() {
             </div>
 
             <button type="reset" className='form-reset' onClick={handleReset}>Reset</button>
-            <button type="submit" className='form-submit' onClick={() => sendDate()}>OK</button>
+            <button type="submit" className='form-submit'>OK</button>
           </form>
         </div>
       </div>
       <div className="right-side">
-        <GeneratorCode sendDate={name}/>
+        <GeneratorCode />
       </div>
     </div>
   )
