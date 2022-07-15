@@ -10,6 +10,13 @@
   padding: 2.5rem 0;
 }
 
+.App-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
 .generator-footer{
   display: flex;
   flex-direction: row;
@@ -80,4 +87,14 @@ button:focus{
   background: #00E109;
   border-radius: 5px;
   color: $primary-color;
+}
+
+.footer{
+  height: 44px;
+  color: $primary-color;
+  text-align: center;
+  font-size: 1.25rem;
+  margin-top: 25px;
+  padding-top: .625rem;
+  background: #D9D9D9;
 }
