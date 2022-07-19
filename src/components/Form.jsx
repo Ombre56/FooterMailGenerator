@@ -2,25 +2,40 @@ import React, { useState } from 'react'
 import GeneratorCode from './GeneratorCode'
 
 function Form() {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [department, setDepartment] = useState("");
-  const [position, setPosition] = useState("");
-  const [telephone, setTelephone] = useState("");
-  const [email, setEmail] = useState("");
+  const [formDate, setFormDate] = useState({
+    name: "",
+    surname: "",
+    department: "",
+    position: "",
+    telephone: "",
+    email: "",
+  });
 
-  const handleReset = () => {
-    setName('');
-    setSurname('');
-    setDepartment('');
-    setPosition('');
-    setTelephone('');
-    setEmail('');
+  const handleChange = (e) => {
+    setFormDate(oldValues => ({
+      ...oldValues,
+      [e.target.name]: e.target.value
+    }));
   };
+
+  const sendDateToChild = () => {
+    setFormDate(formDate);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleReset();
+    console.log(formDate)
+  };
+
+  const handleReset = () => {
+    setFormDate({
+      name: '',
+      surname: '',
+      department: '',
+      position: '',
+      telephone: '',
+      email: '',
+    });
   };
 
   return (
@@ -35,8 +50,8 @@ function Form() {
                   type="text"
                   name="name"
                   maxLength={10}
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={formDate.name}
+                  onChange={handleChange}
                   id="form-name"
                   required={true}
                   placeholder='Wprowadź imie...'
@@ -49,8 +64,8 @@ function Form() {
                   type="text"
                   name="surname"
                   maxLength={10}
-                  value={surname}
-                  onChange={(e) => setSurname(e.target.value)}
+                  value={formDate.surname}
+                  onChange={handleChange}
                   id="form-surname"
                   required={true}
                   placeholder='Wprowadź nazwisko...'
@@ -62,8 +77,8 @@ function Form() {
                 <input
                   type="text"
                   name="department"
-                  value={department}
-                  onChange={(e) => setDepartment(e.target.value)}
+                  value={formDate.department}
+                  onChange={handleChange}
                   id="form-department"
                   required={true}
                   placeholder='Wprowadź wydział...'
@@ -75,8 +90,8 @@ function Form() {
                 <input
                   type="text"
                   name="position"
-                  value={position}
-                  onChange={(e) => setPosition(e.target.value)}
+                  value={formDate.position}
+                  onChange={handleChange}
                   id="form-position"
                   required={true}
                   placeholder='Wprowadź stanowisko...'
@@ -88,9 +103,9 @@ function Form() {
                 <input
                   type="text"
                   name="telephone"
-                  minLength={9}
-                  value={telephone}
-                  onChange={(e) => setTelephone(e.target.value)}
+                  maxLength={9}
+                  value={formDate.telephone}
+                  onChange={handleChange}
                   id="form-telephone"
                   required={true}
                   placeholder='Wprowadź numer telefonu...'
@@ -102,8 +117,8 @@ function Form() {
                 <input
                   type="email"
                   name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={formDate.email}
+                  onChange={handleChange}
                   id="form-email"
                   required={true}
                   placeholder='Wprowadź adres mail...'
@@ -112,12 +127,12 @@ function Form() {
             </div>
 
             <button type="reset" className='form-reset' onClick={handleReset}>Reset</button>
-            <button type="submit" className='form-submit'>OK</button>
+            {/* <button className='form-submit' onClick={sendDateToChild}>OK</button> */}
           </form>
         </div>
       </div>
       <div className="right-side">
-        <GeneratorCode />
+        <GeneratorCode sendDateToChild={formDate}/>
       </div>
     </div>
   )
