@@ -10,7 +10,7 @@
   padding: 2.5rem 0;
 }
 
-.App-header{
+header{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -18,9 +18,11 @@
 }
 
 .generator-footer{
+  min-height: 60vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding-top: 40px;
 }
 
 .form-input{
@@ -89,8 +91,8 @@ button:focus{
   color: $primary-color;
 }
 
-.footer{
-  height: 44px;
+footer{
+  min-height: 5vh;
   color: $primary-color;
   text-align: center;
   font-size: 1.25rem;
