@@ -1,83 +1,104 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './GeneratorCode.scss';
+import { saveAs } from "file-saver";
 import { image } from './ImageLink';
 
-function GeneratorCode({ sendDateToChild }) {
-  return (
-  <>
-    <div className='code-box'>
-      <code>
-        <div className="code-template" id='text'>
-          &lt;html&gt;<br />
-            &nbsp;&lt;head&gt;<br />
-          	&nbsp;&nbsp;&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;<br />
-          &nbsp;&nbsp;&lt;title&gt;&lt;/title&gt;<br />
-        &nbsp;&lt;/head&gt;<br />
-        &nbsp;&lt;body text=&quot;#000000&quot; bgcolor=&quot;#FFFFFF&quot;&gt;<br />
-        &nbsp;&nbsp;Z poważaniem,&lt;br /&gt;<br />
-    &nbsp;&nbsp;&lt;div class=&quot;moz-signature&quot;&gt;<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;moz-signature&quot;&gt;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;moz-signature&quot;&gt;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tbody&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td width=&quot;10&quot; valign=&quot;top&quot; align=&quot;left&quot;&gt;<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p style=&quot;padding-right: 10px; font-family: Helvetica,<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arial, sans-serif; font-size: 14px; line-height:<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16px;&quot;&gt; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{image} &lt;/p&gt;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td align=&quot;left&quot;&gt;<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p style=&quot;font-family: Helvetica, Arial, sans-serif;<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 14px; line-height: 16px;<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:rgb(33,33,33);&quot;&gt;&lt;span style=&quot;font-weight:<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bold; display:inline;&quot; class=&quot;txt<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signature_name-target sig-hide&quot;&gt;<b><u>{sendDateToChild.name} {sendDateToChild.surname}</u></b>&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span<br />
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class=&quot;txt signature_departmenttitle-target sig-hide&quot;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;display: inline; font-style: italic;&quot;&gt;<b><u>{sendDateToChild.department}</u></b>&lt;span&gt;&lt;br /&gt;<br />
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class=&quot;txt signature_jobtitle-target sig-hide&quot;<br/>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;display: inline; font-style: italic;&quot;&gt;<b><u>{sendDateToChild.position}</u></b>&lt;/span&gt;&lt;br /&gt;<br />
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nr telefonu: &lt;span class=&quot;txt<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signature_mobilephone-target sig-hide&quot;&gt;<b><u>{sendDateToChild.telephone}</u></b>&lt;/span&gt;<br/>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class=&quot;txt signature_fax-target<b />
-                      sig-hide&quot;&gt;&lt;/span&gt;&lt;br /&gt;<br />
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail: &lt;a class=&quot;link email signature_email-target<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sig-hide&quot; href=&quot;mailto:<b><u>{sendDateToChild.email}</u></b>&quot;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;text-decoration: none; display: inline;&quot;&gt;<b><u>{sendDateToChild.email}</u></b>&lt;/a&gt;&lt;span<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class=&quot;signature_email-sep sep&quot; style=&quot;display:
-                      inline;&quot;&gt;&lt;/span&gt;&lt;/p&gt;<br />
-                  <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p style=&quot;font-family: Helvetica, Arial, sans-serif;<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 14px; line-height: 16px;&quot;&gt;&lt;span<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class=&quot;txt signature_address-target sig-hide&quot;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;display: inline;&quot;&gt;Urząd Miejski w Wołowie&lt;br&gt;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ul. Rynek 34&lt;br&gt;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56-100 Woł&oacute;w&lt;br&gt;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Polska &lt;/span&gt;&lt;br&gt;<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tbody&gt;<br />
-          &nbsp;&nbsp;&nbsp;&lt;/table&gt;<br />
-          &nbsp;&nbsp;&nbsp;&lt;hr style=&quot; background-color: #247bc0;&quot;&gt;<br />
-         &nbsp;&nbsp;&nbsp;&lt;p style=&quot;font-family: Helvetica, Arial, sans-serif;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;font-size: 12px; line-height: 12px;&quot;&gt; This e-mail may<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;contain information that is privileged, confidential or<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;otherwise protected from disclosure. It must not be used by,<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;or its contents copied or disclosed to persons other than<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;the intended recipient. &lt;/p&gt;<br />
-          &nbsp;&nbsp;&nbsp;&lt;hr style=&quot; background-color: #247bc0;&quot;&gt;&lt;/div&gt;<br />
-      &nbsp;&nbsp;&lt;/div&gt;<br />
-    &nbsp;&lt;/div&gt;<br />
-  &lt;/body&gt;<br />
-  &lt;/html&gt;<br />
-        </div>
-      </code>
+function GeneratorCode({ userData, handleReset, clicked }) {
+  const [visibleButton, setVisibleButton] = useState(true);
+
+  const downloadTxtFile = () => {
+    const codeTemplate = `<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title></title>
+  </head>
+  <body text="#000000" bgcolor="#FFFFFF">
+    Z poważaniem,<br>
+    <div class="moz-signature">
+      <div class="moz-signature">
+        <div class="moz-signature">
+          <table width="100%" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td width="10" valign="top" align="left">
+                  <p style="padding-right: 10px; font-family: Helvetica,
+                    Arial, sans-serif; font-size: 14px; line-height:
+                    16px;"> ${image} </p>
+                </td>
+                <td align="left">
+                  <p style="font-family: Helvetica, Arial, sans-serif;
+                    font-size: 14px; line-height: 16px;
+                    color:rgb(33,33,33);"><span style="font-weight:
+                      bold; display:inline;" class="txt
+                      signature_name-target sig-hide">${userData.name} ${userData.surname}</span><span
+                      class="title-sep sep" style="display: inline;"></span><br><br>
+                    <span class="txt signature_departmenttitle-target sig-hide"
+                      style="display: inline; font-style: italic;">${userData.department}</span><br>
+                    <span class="txt signature_jobtitle-target sig-hide"
+                      style="display: inline; font-style: italic;">${userData.position}</span><br>
+                      <br>
+                    Nr telefonu: <span class="txt
+                      signature_mobilephone-target sig-hide">${userData.telephone}</span><span class="txt signature_fax-target
+                      sig-hide"></span><br>
+                    E-mail: <a class="link email signature_email-target
+                      sig-hide" href="mailto:${userData.email}"
+                      style="text-decoration: none; display: inline;">${userData.email}</a><span
+                      class="signature_email-sep sep" style="display:
+                      inline;"></span></p>
+                  <p style="font-family: Helvetica, Arial, sans-serif;
+                    font-size: 14px; line-height: 16px;"><span
+                      class="txt signature_address-target sig-hide"
+                      style="display: inline;">Urząd Miejski w Wołowie<br>
+                      ul. Rynek 34<br>
+                      56-100 Wołów<br>
+                      Polska </span><br>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr style=" background-color: #247bc0;">
+          <p style="font-family: Helvetica, Arial, sans-serif;
+            font-size: 12px; line-height: 12px;"> 
+            Niniejsza wiadomość jest poufna i objęta tajemnicą korespondencji. Wiadomość jest przeznaczona wyłącznie dla adresata. Bez zgody nadawcy zabronione jest jakiekolwiek ujawnianie, kopiowanie, rozpowszechnianie lub inne postępowanie dotyczące tej wiadomości. Jeśli otrzymali Państwo tę wiadomość przez pomyłkę, prosimy o bezzwłoczne skontaktowanie się z nadawcą oraz usunięcie wiadomości z Państwa komputera i serwera. 
+            This message is confidential and covered by the secret of correspondence. The message is intended only for the addressee.  No disclosure, copying, distribution or otherwise proceedings regarding this  message is prohibited without the consent of the sender.  If you have received this message by mistake, please promptly  contact the sender and delete this message from your computer and server. 
+            Odbiorca wiadomości wyraża zgodę na udostępnianie swojego adresu email wszystkim osobom biorącym udział w realizacji kontraktu (umowy), lub innego zdarzenia prawnego w którym uczestniczy, lub będzie uczestniczyć Organizacja. Zgoda może zostać cofnięta w dowolnym momencie przez wysłanie wiadomości na adres e-mail: ${userData.email}. 
+            The recipient of the message consents to his e-mail address available to all persons participating in the execution of the contract (agreement), or other legal event in which he participates, or organization will be
+            participated. The consent may be withdrawn at any time by sending a message to the following e-mail address: ${userData.email}. 
+            Informacja o przetwarzaniu danych osobowych:  ${userData.email}. </p>
+          <hr style=" background-color: #247bc0;"></div>
+      </div>
     </div>
-  </>
+  </body>
+</html>`;
+
+    const blob = new Blob([codeTemplate], { type: "text/plain;charset=utf-8" });
+    saveAs(blob, `Stopka dla ${userData.name}_${userData.surname}.txt`);   
+  }
+
+  const checkClicked = () => {
+    if (clicked === 'true') {
+      setVisibleButton(true);
+    } else {
+      setVisibleButton(visibleButton);      
+    }
+  }
+
+  const handleDownload = () => {
+    checkClicked();
+    downloadTxtFile();
+    handleReset();
+  }
+
+  return (
+    <>
+      <div className='code-box'>
+        {visibleButton ?
+          <button className='download-button' onClick={handleDownload}>Pobierz</button> :
+            <p className='empty-inputs'>Wpisz dane do wygenerowania!</p>
+        }
+      </div>
+    </>
   )
 }
 
