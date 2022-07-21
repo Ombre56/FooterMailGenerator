@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import GeneratorCode from './GeneratorCode'
 
 function Form() {
-  const [formDate, setFormDate] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     surname: "",
     department: "",
@@ -11,24 +11,25 @@ function Form() {
     email: "",
   });
 
+  const [clicked, setClicked] = useState(false);
+
   const handleChange = (e) => {
-    setFormDate(oldValues => ({
+    setFormData(oldValues => ({
       ...oldValues,
       [e.target.name]: e.target.value
     }));
   };
 
-  const sendDateToChild = () => {
-    setFormDate(formDate);
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formDate)
+    setClicked(!clicked);
   };
 
+  const handleValidation = () => {
+  }
+
   const handleReset = () => {
-    setFormDate({
+    setFormData({
       name: '',
       surname: '',
       department: '',
@@ -50,7 +51,7 @@ function Form() {
                   type="text"
                   name="name"
                   maxLength={10}
-                  value={formDate.name}
+                  value={formData.name}
                   onChange={handleChange}
                   id="form-name"
                   required={true}
@@ -64,7 +65,7 @@ function Form() {
                   type="text"
                   name="surname"
                   maxLength={10}
-                  value={formDate.surname}
+                  value={formData.surname}
                   onChange={handleChange}
                   id="form-surname"
                   required={true}
@@ -77,7 +78,7 @@ function Form() {
                 <input
                   type="text"
                   name="department"
-                  value={formDate.department}
+                  value={formData.department}
                   onChange={handleChange}
                   id="form-department"
                   required={true}
@@ -90,7 +91,7 @@ function Form() {
                 <input
                   type="text"
                   name="position"
-                  value={formDate.position}
+                  value={formData.position}
                   onChange={handleChange}
                   id="form-position"
                   required={true}
@@ -104,7 +105,7 @@ function Form() {
                   type="text"
                   name="telephone"
                   maxLength={9}
-                  value={formDate.telephone}
+                  value={formData.telephone}
                   onChange={handleChange}
                   id="form-telephone"
                   required={true}
@@ -117,7 +118,7 @@ function Form() {
                 <input
                   type="email"
                   name="email"
-                  value={formDate.email}
+                  value={formData.email}
                   onChange={handleChange}
                   id="form-email"
                   required={true}
@@ -127,12 +128,15 @@ function Form() {
             </div>
 
             <button type="reset" className='form-reset' onClick={handleReset}>Reset</button>
-            {/* <button className='form-submit' onClick={sendDateToChild}>OK</button> */}
+            <button type="submit" className='form-submit'>OK</button>
           </form>
         </div>
       </div>
       <div className="right-side">
-        <GeneratorCode sendDateToChild={formDate}/>
+        <GeneratorCode
+          userData={formData}
+          handleReset={handleReset}
+          clicked={clicked} />
       </div>
     </div>
   )
