@@ -7,12 +7,12 @@ function App() {
 
   return (
     <>
-      <header className="App-header">
+      <header>
         <div className="left-side">
           <img className='image-herb' src="/assets/images/herb.png" alt="Herb" />
         </div>
         <div className="center">
-          <h1 className='title'>Generator kodu stopki mailingowej</h1>
+          <h1 className='title'>Generator kodu stopki</h1>
         </div>
         <div className="right-side">
           <img className='image-herb' src="/assets/images/herb.png" alt="Herb" />
@@ -24,9 +24,7 @@ function App() {
       </section>
 
       <footer>
-        <div className="footer">
-          {footerTxt}
-        </div>
+        {footerTxt}
       </footer>
     </>
   );
