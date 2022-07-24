@@ -80,12 +80,16 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
     handleReset();
   }
 
+  const giveMessage = () => {
+    return alert('Najpierw uzupełnij pola!')
+  }
+
   return (
     <>
       <div className='code-box'>
         {visibleButton ?
           <button className='download-button' onClick={handleDownload}>Pobierz</button> :
-            <p className='empty-inputs'>Wpisz dane do wygenerowania!</p>
+            <button className='download-button-disabled' onClick={giveMessage}>Pobierz</button>
         }
       </div>
     </>
