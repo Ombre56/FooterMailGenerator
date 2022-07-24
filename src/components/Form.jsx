@@ -11,7 +11,7 @@ function Form() {
     email: "",
   });
 
-  const [clicked, setClicked] = useState(false);
+  const [visibleButton, setVisibleButton] = useState(false);
 
   const handleChange = (e) => {
     setFormData(oldValues => ({
@@ -22,11 +22,8 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setClicked(!clicked);
+    setVisibleButton(!visibleButton);
   };
-
-  const handleValidation = () => {
-  }
 
   const handleReset = () => {
     setFormData({
@@ -37,6 +34,7 @@ function Form() {
       telephone: '',
       email: '',
     });
+    setVisibleButton(!visibleButton);
   };
 
   return (
@@ -136,7 +134,8 @@ function Form() {
         <GeneratorCode
           userData={formData}
           handleReset={handleReset}
-          clicked={clicked} />
+          visibleButton={visibleButton}
+        />
       </div>
     </div>
   )

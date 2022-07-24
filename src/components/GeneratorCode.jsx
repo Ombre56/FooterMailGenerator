@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './GeneratorCode.scss';
 import { saveAs } from "file-saver";
 import { image } from './ImageLink';
 
-function GeneratorCode({ userData, handleReset, clicked }) {
-  const [visibleButton, setVisibleButton] = useState(true);
+function GeneratorCode({ userData, handleReset, visibleButton }) {
 
   const downloadTxtFile = () => {
     const codeTemplate = `<html>
@@ -59,7 +58,7 @@ function GeneratorCode({ userData, handleReset, clicked }) {
           </table>
           <hr style=" background-color: #247bc0;">
           <p style="font-family: Helvetica, Arial, sans-serif;
-            font-size: 12px; line-height: 12px;"> 
+            font-size: 9px; line-height: 9px;"> 
             Niniejsza wiadomość jest poufna i objęta tajemnicą korespondencji. Wiadomość jest przeznaczona wyłącznie dla adresata. Bez zgody nadawcy zabronione jest jakiekolwiek ujawnianie, kopiowanie, rozpowszechnianie lub inne postępowanie dotyczące tej wiadomości. Jeśli otrzymali Państwo tę wiadomość przez pomyłkę, prosimy o bezzwłoczne skontaktowanie się z nadawcą oraz usunięcie wiadomości z Państwa komputera i serwera. 
             This message is confidential and covered by the secret of correspondence. The message is intended only for the addressee.  No disclosure, copying, distribution or otherwise proceedings regarding this  message is prohibited without the consent of the sender.  If you have received this message by mistake, please promptly  contact the sender and delete this message from your computer and server. 
             Odbiorca wiadomości wyraża zgodę na udostępnianie swojego adresu email wszystkim osobom biorącym udział w realizacji kontraktu (umowy), lub innego zdarzenia prawnego w którym uczestniczy, lub będzie uczestniczyć Organizacja. Zgoda może zostać cofnięta w dowolnym momencie przez wysłanie wiadomości na adres e-mail: ${userData.email}. 
@@ -76,16 +75,7 @@ function GeneratorCode({ userData, handleReset, clicked }) {
     saveAs(blob, `Stopka dla ${userData.name}_${userData.surname}.txt`);   
   }
 
-  const checkClicked = () => {
-    if (clicked === 'true') {
-      setVisibleButton(true);
-    } else {
-      setVisibleButton(visibleButton);      
-    }
-  }
-
   const handleDownload = () => {
-    checkClicked();
     downloadTxtFile();
     handleReset();
   }
