@@ -126,7 +126,7 @@ function Form() {
             </div>
 
             <button type="reset" className='form-reset' onClick={handleReset}>Reset</button>
-            <button type="submit" className='form-submit'>OK</button>
+            <button type="submit" className='form-submit'>Generuj</button>
           </form>
         </div>
       </div>
