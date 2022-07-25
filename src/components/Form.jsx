@@ -53,7 +53,7 @@ function Form() {
                   onChange={handleChange}
                   id="form-name"
                   required={true}
-                  placeholder='Wprowadź imie...'
+                  placeholder='Wprowadź imie'
                 />
               </div>
 
@@ -67,7 +67,7 @@ function Form() {
                   onChange={handleChange}
                   id="form-surname"
                   required={true}
-                  placeholder='Wprowadź nazwisko...'
+                  placeholder='Wprowadź nazwisko'
                 />
               </div>
 
@@ -80,7 +80,7 @@ function Form() {
                   onChange={handleChange}
                   id="form-department"
                   required={true}
-                  placeholder='Wprowadź wydział...'
+                  placeholder='Wprowadź wydział'
                 />
               </div>
 
@@ -93,7 +93,7 @@ function Form() {
                   onChange={handleChange}
                   id="form-position"
                   required={true}
-                  placeholder='Wprowadź stanowisko...'
+                  placeholder='Wprowadź stanowisko'
                 />
               </div>
 
@@ -103,11 +103,13 @@ function Form() {
                   type="text"
                   name="telephone"
                   maxLength={9}
+                  pattern="[0-9]{1,9}"
+                  title='Możesz tu wprowadzić tylko cyfry i maksymalnie (9)'
                   value={formData.telephone}
                   onChange={handleChange}
                   id="form-telephone"
                   required={true}
-                  placeholder='Wprowadź numer telefonu...'
+                  placeholder='Wprowadź numer telefonu'
                 />
               </div>
 
@@ -116,11 +118,13 @@ function Form() {
                 <input
                   type="email"
                   name="email"
+                  pattern="[a-z0-9._%+-]+@wolow.pl"
+                  title='Możesz tu wprowadzić tylko email z domeną (wolow.pl)'
                   value={formData.email}
                   onChange={handleChange}
                   id="form-email"
                   required={true}
-                  placeholder='Wprowadź adres mail...'
+                  placeholder='Wprowadź adres mail'
                 />
               </div>
             </div>
