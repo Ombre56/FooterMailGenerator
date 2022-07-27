@@ -72,7 +72,7 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
 </html>`;
 
     const blob = new Blob([codeTemplate], { type: "text/plain;charset=utf-8" });
-    saveAs(blob, `Stopka dla ${userData.name}_${userData.surname}.txt`);   
+    saveAs(blob, `Stopka dla ${userData.name}_${userData.surname}.html`);   
   }
 
   const handleDownload = () => {
