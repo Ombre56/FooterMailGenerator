@@ -12,7 +12,7 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
     <title></title>
   </head>
   <body text="#000000" bgcolor="#FFFFFF">
-    Z poważaniem,<br>
+    Z poważaniem,<br><br>
     <div class="moz-signature">
       <div class="moz-signature">
         <div class="moz-signature">
@@ -59,9 +59,9 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
           <hr style=" background-color: #247bc0;">
           <p style="font-family: Helvetica, Arial, sans-serif;
             font-size: 9px; line-height: 9px;"> 
-            Niniejsza wiadomość jest poufna i objęta tajemnicą korespondencji. Wiadomość jest przeznaczona wyłącznie dla adresata. Bez zgody nadawcy zabronione jest jakiekolwiek ujawnianie, kopiowanie, rozpowszechnianie lub inne postępowanie dotyczące tej wiadomości. Jeśli otrzymali Państwo tę wiadomość przez pomyłkę, prosimy o bezzwłoczne skontaktowanie się z nadawcą oraz usunięcie wiadomości z Państwa komputera i serwera. 
-            This message is confidential and covered by the secret of correspondence. The message is intended only for the addressee.  No disclosure, copying, distribution or otherwise proceedings regarding this  message is prohibited without the consent of the sender.  If you have received this message by mistake, please promptly  contact the sender and delete this message from your computer and server. 
-            Odbiorca wiadomości wyraża zgodę na udostępnianie swojego adresu email wszystkim osobom biorącym udział w realizacji kontraktu (umowy), lub innego zdarzenia prawnego w którym uczestniczy, lub będzie uczestniczyć Organizacja. Zgoda może zostać cofnięta w dowolnym momencie przez wysłanie wiadomości na adres e-mail: ${userData.email}. 
+            Niniejsza wiadomość jest poufna i objęta tajemnicą korespondencji. Wiadomość jest przeznaczona wyłącznie dla adresata. Bez zgody nadawcy zabronione jest jakiekolwiek ujawnianie, kopiowanie, rozpowszechnianie lub inne postępowanie dotyczące tej wiadomości. Jeśli otrzymali Państwo tę wiadomość przez pomyłkę, prosimy o bezzwłoczne skontaktowanie się z nadawcą oraz usunięcie wiadomości z Państwa komputera i serwera.<br> 
+            This message is confidential and covered by the secret of correspondence. The message is intended only for the addressee.  No disclosure, copying, distribution or otherwise proceedings regarding this  message is prohibited without the consent of the sender.  If you have received this message by mistake, please promptly  contact the sender and delete this message from your computer and server.<br>
+            Odbiorca wiadomości wyraża zgodę na udostępnianie swojego adresu email wszystkim osobom biorącym udział w realizacji kontraktu (umowy), lub innego zdarzenia prawnego w którym uczestniczy, lub będzie uczestniczyć Organizacja. Zgoda może zostać cofnięta w dowolnym momencie przez wysłanie wiadomości na adres e-mail: ${userData.email}.<br>
             The recipient of the message consents to his e-mail address available to all persons participating in the execution of the contract (agreement), or other legal event in which he participates, or organization will be
             participated. The consent may be withdrawn at any time by sending a message to the following e-mail address: ${userData.email}. 
             Informacja o przetwarzaniu danych osobowych:  ${userData.email}. </p>
