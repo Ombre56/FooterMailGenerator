@@ -48,7 +48,7 @@ function Form() {
                 <input
                   type="text"
                   name="name"
-                  maxLength={10}
+                  maxLength={20}
                   value={formData.name}
                   onChange={handleChange}
                   id="form-name"
@@ -62,7 +62,7 @@ function Form() {
                 <input
                   type="text"
                   name="surname"
-                  maxLength={10}
+                  maxLength={20}
                   value={formData.surname}
                   onChange={handleChange}
                   id="form-surname"
