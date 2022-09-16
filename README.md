@@ -1,31 +1,35 @@
-# Create React App
 
-This directory is a brief example of a [Create React App](https://github.com/facebook/create-react-app) site that can be deployed to Vercel with zero configuration.
+# 👩‍💻 Footer Mail Generator for Thunderbird application
 
-## Deploy Your Own
+➼ The generator was created for the City Hall to automate the setting of the email footer.
 
-Deploy your own Create React App project with Vercel.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/create-react-app&template=create-react-app)
 
-_Live Example: https://create-react-template.vercel.app/_
+## Authors
 
-## Available Scripts
+- [@Ombre56](https://www.github.com/Ombre56)
 
-In the project directory, you can run:
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Client:** React, JavaScript, HTML5, CSS3(SCSS)
 
-The page will reload when you make changes. You may also see any lint errors in the console.
+**Server:** Node
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Demo
 
-### `npm run build`
+➢ https://footer-mail-generator.vercel.app
 
-Builds the app for production to the `build` folder.
 
-It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
+## Used By
+
+This project is used by the following companies:
+
+- Urząd Miejski w Wołowie
+
+
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/18633930/190675842-8d76a17c-2d00-43b7-86dc-4db55eb6e7ad.png)
+
