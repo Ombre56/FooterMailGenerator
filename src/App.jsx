@@ -4,7 +4,7 @@ import Form from './components/Form';
 import img from './assets/image/herb.png';
 
 function App() {
-  const footerTxt = 'Copyright © 2022 by Krystian Heluszka. Wszelkie prawa zastrzeżone.';
+  const footerTxt = 'Copyright © 2022 by Krystian Heluszka <a href="https://www.ombre.tech">www.ombre.tech</a>. Wszelkie prawa zastrzeżone.';
 
   return (
     <>
