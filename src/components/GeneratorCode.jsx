@@ -12,7 +12,7 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
     <title></title>
   </head>
   <body text="#000000" bgcolor="#FFFFFF">
-    Z poważaniem,<br><br>
+    Z poważaniem,
     <div class="moz-signature">
       <div class="moz-signature">
         <div class="moz-signature">
@@ -20,13 +20,12 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
             <tbody>
               <tr>
                 <td width="10" valign="top" align="left">
-                  <p style="padding-right: 10px; font-family: Helvetica,
-                    Arial, sans-serif; font-size: 14px; line-height:
+                  <p style="padding-right: 10px; font-family: 'Albert Sans', sans-serif; font-size: 14px; line-height:
                     16px;"> ${image} </p>
                 </td>
                 <td align="left">
-                  <p style="font-family: Helvetica, Arial, sans-serif;
-                    font-size: 14px; line-height: 16px;
+                  <p style="font-family: 'Albert Sans', sans-serif;
+                    font-size: 18px; line-height: 20px;
                     color:rgb(33,33,33);"><span style="font-weight:
                       bold; display:inline;" class="txt
                       signature_name-target sig-hide">${userData.name} ${userData.surname}</span><span
@@ -44,7 +43,7 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
                       style="text-decoration: none; display: inline;">${userData.email}</a><span
                       class="signature_email-sep sep" style="display:
                       inline;"></span></p>
-                  <p style="font-family: Helvetica, Arial, sans-serif;
+                  <p style="font-family: 'Albert Sans', sans-serif;
                     font-size: 14px; line-height: 16px;"><span
                       class="txt signature_address-target sig-hide"
                       style="display: inline;">Urząd Miejski w Wołowie<br>
@@ -57,7 +56,7 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
             </tbody>
           </table>
           <hr style=" background-color: #247bc0;">
-          <p style="font-family: Helvetica, Arial, sans-serif;
+          <p style="font-family: 'Albert Sans', sans-serif;
             font-size: 9px; line-height: 9px;"> 
             Niniejsza wiadomość jest poufna i objęta tajemnicą korespondencji. Wiadomość jest przeznaczona wyłącznie dla adresata. Bez zgody nadawcy zabronione jest jakiekolwiek ujawnianie, kopiowanie, rozpowszechnianie lub inne postępowanie dotyczące tej wiadomości. Jeśli otrzymali Państwo tę wiadomość przez pomyłkę, prosimy o bezzwłoczne skontaktowanie się z nadawcą oraz usunięcie wiadomości z Państwa komputera i serwera.<br> 
             This message is confidential and covered by the secret of correspondence. The message is intended only for the addressee.  No disclosure, copying, distribution or otherwise proceedings regarding this  message is prohibited without the consent of the sender.  If you have received this message by mistake, please promptly  contact the sender and delete this message from your computer and server.<br>
