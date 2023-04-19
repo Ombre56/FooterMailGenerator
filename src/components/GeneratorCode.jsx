@@ -11,7 +11,7 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title></title>
   </head>
-  <body text="#000000" bgcolor="#FFFFFF" style="font-family: 'Albert Sans', sans-serif; font-size: 14px; line-height: 16px;">
+  <body text="#000000" bgcolor="#FFFFFF" style="font-family: 'Albert Sans', sans-serif;">
     <span style="font-size: 16px;">Z poważaniem,</span><br>
     <div class="moz-signature">
       <div class="moz-signature">
@@ -35,10 +35,12 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
                     <span class="txt signature_jobtitle-target sig-hide"
                       style="display: inline; font-style: italic; font-size: 14px; line-height: 16px;">${userData.position}</span><br>
                       <br>
-                    Nr telefonu: <span class="txt
+                    <span style="font-family: 'Albert Sans', sans-serif;
+                    font-size: 14px; line-height: 16px;">Nr telefonu:</span> <span class="txt
                       signature_mobilephone-target sig-hide" style="font-size: 14px; line-height: 16px;">${userData.telephone}</span><span class="txt signature_fax-target
                       sig-hide"></span><br>
-                    E-mail: <a class="link email signature_email-target
+                    <span style="font-family: 'Albert Sans', sans-serif;
+                    font-size: 14px; line-height: 16px;">E-mail:</span> <a class="link email signature_email-target
                       sig-hide" href="mailto:${userData.email}"
                       style="text-decoration: none; display: inline; font-size: 14px; line-height: 16px;">${userData.email}</a><span
                       class="signature_email-sep sep" style="display:
