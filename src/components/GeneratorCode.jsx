@@ -11,8 +11,8 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title></title>
   </head>
-  <body text="#000000" bgcolor="#FFFFFF" style="font-family: 'Albert Sans', sans-serif; font-size: 14px; line-height: 16px;">
-    Z poważaniem,<br><br>
+  <body text="#000000" bgcolor="#FFFFFF" style="font-family: 'Albert Sans', sans-serif;">
+    Z poważaniem,<br>
     <div class="moz-signature">
       <div class="moz-signature">
         <div class="moz-signature">
@@ -33,14 +33,14 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
                     <span class="txt signature_departmenttitle-target sig-hide"
                       style="display: inline; font-style: italic; font-size: 14px; line-height: 16px;">${userData.department}</span><br>
                     <span class="txt signature_jobtitle-target sig-hide"
-                      style="display: inline; font-style: italic;">${userData.position}</span><br>
+                      style="display: inline; font-style: italic; font-size: 14px; line-height: 16px;">${userData.position}</span><br>
                       <br>
                     Nr telefonu: <span class="txt
-                      signature_mobilephone-target sig-hide">${userData.telephone}</span><span class="txt signature_fax-target
+                      signature_mobilephone-target sig-hide" style="font-size: 14px; line-height: 16px;">${userData.telephone}</span><span class="txt signature_fax-target
                       sig-hide"></span><br>
                     E-mail: <a class="link email signature_email-target
                       sig-hide" href="mailto:${userData.email}"
-                      style="text-decoration: none; display: inline;">${userData.email}</a><span
+                      style="text-decoration: none; display: inline; font-size: 14px; line-height: 16px;">${userData.email}</a><span
                       class="signature_email-sep sep" style="display:
                       inline;"></span></p>
                   <p style="font-family: 'Albert Sans', sans-serif;
