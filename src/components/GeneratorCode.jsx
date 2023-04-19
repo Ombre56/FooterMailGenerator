@@ -12,7 +12,7 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
     <title></title>
   </head>
   <body text="#000000" bgcolor="#FFFFFF" style="font-family: 'Albert Sans', sans-serif;">
-    <span style="font-size: 16px;">Z poważaniem,</span><br>
+    <span style="font-size: 16px;">Z poważaniem,</span><br><br>
     <div class="moz-signature">
       <div class="moz-signature">
         <div class="moz-signature">
