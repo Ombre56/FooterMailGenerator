@@ -11,8 +11,8 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title></title>
   </head>
-  <body text="#000000" bgcolor="#FFFFFF">
-    Z poważaniem,
+  <body text="#000000" bgcolor="#FFFFFF" style="font-family: 'Albert Sans', sans-serif;">
+    Z poważaniem,<br />
     <div class="moz-signature">
       <div class="moz-signature">
         <div class="moz-signature">
@@ -31,7 +31,7 @@ function GeneratorCode({ userData, handleReset, visibleButton }) {
                       signature_name-target sig-hide">${userData.name} ${userData.surname}</span><span
                       class="title-sep sep" style="display: inline;"></span><br><br>
                     <span class="txt signature_departmenttitle-target sig-hide"
-                      style="display: inline; font-style: italic;">${userData.department}</span><br>
+                      style="display: inline; font-style: italic; font-size: 14px; line-height: 16px;">${userData.department}</span><br>
                     <span class="txt signature_jobtitle-target sig-hide"
                       style="display: inline; font-style: italic;">${userData.position}</span><br>
                       <br>
