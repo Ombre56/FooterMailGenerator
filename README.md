@@ -1,7 +1,7 @@
 
 # 👩‍💻 Footer Mail Generator for Thunderbird application
 
-➼ The generator was created for the City Hall to automate the setting of the email footer.
+➼ The generator was created for the City Hall to automate the setting of the email footer. This site is only desktop version and used domain only wolow.pl in email domain.
 
 
 
